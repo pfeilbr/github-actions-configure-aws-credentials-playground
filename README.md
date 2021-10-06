@@ -17,7 +17,7 @@ aws cloudformation deploy \
     --capabilities "CAPABILITY_IAM" "CAPABILITY_NAMED_IAM" \
     --parameter-overrides GitHubOrg=pfeilbr \
         RepositoryName=github-actions-configure-aws-credentials-playground \
-        OIDCProviderArn="arn:aws:iam::529276214230:oidc-provider/vstoken.actions.githubusercontent.com"
+#        OIDCProviderArn="arn:aws:iam::529276214230:oidc-provider/vstoken.actions.githubusercontent.com"
 
 # run workflow manually
 gh workflow run default.yml
@@ -27,6 +27,12 @@ gh run list --workflow=default.yml
 
 # show run details 
 gh run view <run-id>
+
+
+aws cloudformation delete-stack \
+    --profile "${PROFILE}" \
+    --region "${REGION}" \
+    --stack-name "${STACK_NAME}"
 ```
 
 ## Resources
