@@ -6,6 +6,10 @@ name: demo
 
 on: workflow_dispatch
 
+permissions:
+  id-token: write
+  contents: write
+
 jobs:
   deploy:
     name: Upload to Amazon S3
