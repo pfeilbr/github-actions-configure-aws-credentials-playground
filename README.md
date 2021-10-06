@@ -16,7 +16,8 @@ aws cloudformation deploy \
     --template-file sample-role.yaml \
     --capabilities "CAPABILITY_IAM" "CAPABILITY_NAMED_IAM" \
     --parameter-overrides GitHubOrg=pfeilbr \
-        RepositoryName=github-actions-configure-aws-credentials-playground
+        RepositoryName=github-actions-configure-aws-credentials-playground \
+        OIDCProviderArn="arn:aws:iam::529276214230:oidc-provider/vstoken.actions.githubusercontent.com"
 ```
 
 ## Resources

@@ -18,6 +18,7 @@ Resources:
     Type: AWS::IAM::Role
     Properties:
       RoleName: ExampleGithubRole
+      ManagedPolicyArns: [arn:aws:iam::aws:policy/ReadOnlyAccess]
       AssumeRolePolicyDocument:
         Statement:
           - Effect: Allow
