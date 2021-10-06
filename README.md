@@ -18,6 +18,15 @@ aws cloudformation deploy \
     --parameter-overrides GitHubOrg=pfeilbr \
         RepositoryName=github-actions-configure-aws-credentials-playground \
         OIDCProviderArn="arn:aws:iam::529276214230:oidc-provider/vstoken.actions.githubusercontent.com"
+
+# run workflow manually
+gh workflow run default.yml
+
+# list runs
+gh run list --workflow=default.yml
+
+# show run details 
+gh run view <run-id>
 ```
 
 ## Resources
