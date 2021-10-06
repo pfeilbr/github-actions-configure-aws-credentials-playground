@@ -19,13 +19,13 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Configure AWS credentials from Test account
+    - name: Configure AWS credentials with role-to-assume
       uses: aws-actions/configure-aws-credentials@master
       with:
         role-to-assume: arn:aws:iam::529276214230:role/ExampleGithubRole
         aws-region: us-east-1
 
-    - name: Copy files to the test website with the AWS CLI
+    - name: aws sts get-caller-identity
       run: |
         aws sts get-caller-identity
 
