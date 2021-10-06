@@ -28,12 +28,16 @@ gh run list --workflow=default.yml
 # show run details 
 gh run view <run-id>
 
-
+# delete stack
 aws cloudformation delete-stack \
     --profile "${PROFILE}" \
     --region "${REGION}" \
     --stack-name "${STACK_NAME}"
 ```
+
+successful workflow run with `aws sts get-caller-identity`
+
+![](https://www.evernote.com/l/AAGFdh9yCjpGyacSCdALNi1MrcBA7claSrAB/image.png)
 
 ## Resources
 
